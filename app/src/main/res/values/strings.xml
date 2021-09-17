@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Knigolyub</string>
+    <string name="knigolyub">Книголюб</string>
+    <string name="your_email">Ваш email</string>
+    <string name="your_password">Ваш пароль</string>
+    <string name="signIn">Вход</string>
+    <string name="enter">войти</string>
+    <string name="remember_me">Запомнить меня</string>
+    <string name="forget_password">Забыл пароль?</string>
+</resources>
