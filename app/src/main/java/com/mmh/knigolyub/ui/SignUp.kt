@@ -1,12 +1,9 @@
 package com.mmh.knigolyub.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mmh.knigolyub.R
-import com.mmh.knigolyub.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.mmh.knigolyub.databinding.ActivitySignUpBinding
-import com.mmh.knigolyub.utils.showToast
 import com.thekhaeng.pushdownanim.PushDownAnim
 
 class SignUp : AppCompatActivity() {
@@ -20,7 +17,7 @@ class SignUp : AppCompatActivity() {
         binding.apply {
             PushDownAnim.setPushDownAnimTo(teacherBtn)
                 .setOnClickListener {
-                    startActivity(Intent(this@SignUp, SignUpTeacher1::class.java))
+                    startActivity(Intent(this@SignUp, SignUpTeacher::class.java))
                 }
             PushDownAnim.setPushDownAnimTo(studentBtn)
                 .setOnClickListener {

@@ -1,12 +1,12 @@
 package com.mmh.knigolyub.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.mmh.knigolyub.R
 
-class SignUpTeacher2 : AppCompatActivity() {
+class SignUpTeacher : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up_teacher2)
+        setContentView(R.layout.activity_sign_up_teacher)
     }
 }

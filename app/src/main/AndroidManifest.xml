@@ -23,7 +23,7 @@
             android:name=".ui.SignUpTeacher2"
             android:exported="true" />
         <activity
-            android:name=".ui.SignUpTeacher1"
+            android:name=".ui.SignUpTeacher"
             android:exported="true" />
         <activity
             android:name=".ui.SignUp"

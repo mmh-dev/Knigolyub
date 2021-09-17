@@ -18,12 +18,15 @@
     <string name="name">Ф.И.О</string>
     <string name="school">Школа</string>
     <string name="grade">Класс</string>
-    <string name="grade_letter">Буква класса(А, В, альфа)</string>
+    <string name="grade_letter">Буква</string>
     <string name="male">Мужской</string>
     <string name="female">Женский</string>
     <string name="your_gender">Ваш пол</string>
     <string name="your_number">Ваш номер телефона</string>
     <string name="teacher_sighUp">Регистрация учителя</string>
     <string name="next">Далее</string>
-    <string name="signUp_teacher_text">Для завершения регистрации нужно указать ваш школьный класс. Выберите класс из списка ниже или создайте новый</string>
+    <string name="signUp_teacher_text">Выберите ваш класс из списка или создайте новый</string>
+    <string name="number_of_students">Кол-во учеников</string>
+    <string name="i_am_classroom_teacher">Я классный руководитель</string>
+    <string name="create_class">Создать класс</string>
 </resources>
