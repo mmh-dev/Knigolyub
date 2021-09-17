@@ -4,7 +4,26 @@
     <string name="your_email">Ваш email</string>
     <string name="your_password">Ваш пароль</string>
     <string name="signIn">Вход</string>
-    <string name="enter">войти</string>
+    <string name="enter">Войти</string>
     <string name="remember_me">Запомнить меня</string>
     <string name="forget_password">Забыл пароль?</string>
+    <string name="signIn_with_google">Войти с Google</string>
+    <string name="no_account">Еще не зарегистрирован?</string>
+    <string name="signUp">Регистрация</string>
+    <string name="already_have_account">Уже зарегистрированы?</string>
+    <string name="teacher">Учитель</string>
+    <string name="student">ученик</string>
+    <string name="your_position">Укажите свой статус</string>
+    <string name="student_signUp">Регистрация ученика</string>
+    <string name="name">Ф.И.О</string>
+    <string name="school">Школа</string>
+    <string name="grade">Класс</string>
+    <string name="grade_letter">Буква класса(А, В, альфа)</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+    <string name="your_gender">Ваш пол</string>
+    <string name="your_number">Ваш номер телефона</string>
+    <string name="teacher_sighUp">Регистрация учителя</string>
+    <string name="next">Далее</string>
+    <string name="signUp_teacher_text">Для завершения регистрации нужно указать ваш школьный класс. Выберите класс из списка ниже или создайте новый</string>
 </resources>

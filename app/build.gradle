@@ -68,7 +68,4 @@ dependencies {
     implementation( 'com.github.thekhaeng:pushdown-anim-click:1.1.1' ){
         exclude group: 'com.android.support'}
 
-    // Google signIn button
-    implementation 'com.shobhitpuri.custombuttons:google-signin:1.1.0'
-
 }

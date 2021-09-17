@@ -1,5 +1,6 @@
 package com.mmh.knigolyub.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
@@ -17,10 +18,19 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        PushDownAnim.setPushDownAnimTo(binding.signInBtn)
-            .setOnClickListener {
-                showToast("shfegr")
+        binding.apply {
+            PushDownAnim.setPushDownAnimTo(signInBtn)
+                .setOnClickListener {
+                    showToast("shfegr")
+                }
+            signUpLink.setOnClickListener {
+                startActivity(Intent(this@Login, SignUp::class.java))
             }
+        }
+
+
+
+
 
 
     }
