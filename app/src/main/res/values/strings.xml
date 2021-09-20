@@ -34,4 +34,8 @@
     <string name="applicationID">ADEiBEFVpgH2b82eOChF9BOX3VoA5IneUpSI05bc</string>
     <string name="clientKey">E9FtDupWEb8hpzj3SU7pBFDUexrXQV12Tu5KjzTo</string>
     <string name="ParseAPI">https://parseapi.back4app.com/</string>
+    <string name="books">Книги</string>
+    <string name="progress">Прогресс</string>
+    <string name="account">Профиль</string>
+    <string name="settings">Настройки</string>
 </resources>

@@ -19,14 +19,20 @@
 
     </FrameLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <io.ak1.BubbleTabBar
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_menu" />
+        app:elevation="5dp"
+        app:bubbletab_title_size="14sp"
+        app:bubbletab_icon_size="24dp"
+        android:background="@android:color/white"
+        app:bubbletab_disabled_icon_color="@color/grey"
+        app:bubbletab_menuResource="@menu/bottom_menu"
+        android:padding="7dp"
+        app:bubbletab_tab_corner_radius="25dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

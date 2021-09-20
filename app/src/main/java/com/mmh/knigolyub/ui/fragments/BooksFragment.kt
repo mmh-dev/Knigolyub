@@ -5,22 +5,45 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.mmh.knigolyub.R
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import com.mmh.knigolyub.databinding.FragmentBooksBinding
+import com.mmh.knigolyub.entities.User
+import com.mmh.knigolyub.viewmodel.UserViewModel
+import kotlinx.coroutines.launch
 
 
 class BooksFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private lateinit var binding: FragmentBooksBinding
+    private val viewModel: UserViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_books, container, false)
+        binding = FragmentBooksBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val user = User(
+            name = "kjkkjk",
+            password = "lklkll",
+            email = "mmh@tyhrt.ru",
+            school = "ili",
+            grade = 6,
+            gradeLetter = "альфа",
+            isMale = true,
+            phone = 555973025,
+            status = "teacher"
+        )
+
+        lifecycleScope.launch {
+            viewModel.insertUser(user)
+        }
     }
 
 }

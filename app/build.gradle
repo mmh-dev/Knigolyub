@@ -87,6 +87,9 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
+    //bubble bottom navigation tabs
+    implementation  'io.ak1:bubbletabbar:1.0.8'
+
 //    //Parse
 //    ext {
 //        parseVersion = "1.26.0"
