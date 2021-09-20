@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title=""
+        android:icon="@drawable/ic_book"
+        android:iconTint="@color/violet"
+        android:id="@+id/nav_books" />
+    <item
+        android:title=""
+        android:icon="@drawable/ic_progress"
+        android:iconTint="@color/violet"
+        android:id="@+id/nav_progress" />
+    <item
+        android:title=""
+        android:icon="@drawable/ic_account"
+        android:iconTint="@color/violet"
+        android:id="@+id/nav_profile" />
+    <item
+        android:title=""
+        android:icon="@drawable/ic_settings"
+        android:iconTint="@color/violet"
+        android:id="@+id/nav_settings" />
+</menu>

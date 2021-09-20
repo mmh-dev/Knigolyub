@@ -1,8 +1,8 @@
-package com.mmh.knigolyub.ui
+package com.mmh.knigolyub.ui.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.mmh.knigolyub.R
 import com.rbddevs.splashy.Splashy
 

@@ -1,11 +1,9 @@
-package com.mmh.knigolyub.ui
+package com.mmh.knigolyub.ui.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.app.AppCompatActivity
 import com.mmh.knigolyub.databinding.ActivityLoginBinding
-import com.mmh.knigolyub.databinding.ActivityMainBinding
 import com.mmh.knigolyub.utils.showToast
 import com.thekhaeng.pushdownanim.PushDownAnim
 

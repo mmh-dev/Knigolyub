@@ -53,7 +53,6 @@ dependencies {
     // custom splash screen
     implementation 'com.rbddevs.splashy:splashy:1.3.0'
 
-
     //permissions
     implementation("com.robertlevonyan.components:PermissionsFlow:1.2.2")
 
@@ -67,5 +66,36 @@ dependencies {
     //Button with push down effect
     implementation( 'com.github.thekhaeng:pushdown-anim-click:1.1.1' ){
         exclude group: 'com.android.support'}
+
+//    //Google services
+//    implementation 'com.google.android.gms:play-services-location:18.0.0'
+//    implementation ('com.google.apis:google-api-services-drive:v3-rev136-1.25.0')
+//            {
+//                exclude group: 'org.apache.httpcomponents'
+//            }
+//    implementation ('com.google.api-client:google-api-client-android:1.26.0')
+//            {
+//                exclude group: 'org.apache.httpcomponents'
+//            }
+//    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+//    //Parse
+//    ext {
+//        parseVersion = "1.26.0"
+//    }
+//    implementation "com.github.parse-community.Parse-SDK-Android:parse:1.26.0"
+//    // for Google login/signup support (optional)
+//    implementation "com.github.parse-community.Parse-SDK-Android:google:$parseVersion"
+//    implementation "com.github.parse-community.Parse-SDK-Android:ktx:$parseVersion"
+//    // for Kotlin coroutines support (optional)
+//    implementation "com.github.parse-community.Parse-SDK-Android:coroutines:$parseVersion"
 
 }

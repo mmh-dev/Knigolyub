@@ -1,9 +1,10 @@
-package com.mmh.knigolyub.ui
+package com.mmh.knigolyub.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.mmh.knigolyub.R
 import com.mmh.knigolyub.databinding.ActivityMainBinding
+import com.mmh.knigolyub.ui.fragments.BooksFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, BooksFragment())
+                .commit()
+        }
     }
-
 }

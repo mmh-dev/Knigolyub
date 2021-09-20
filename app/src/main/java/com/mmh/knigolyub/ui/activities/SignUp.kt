@@ -1,4 +1,4 @@
-package com.mmh.knigolyub.ui
+package com.mmh.knigolyub.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
