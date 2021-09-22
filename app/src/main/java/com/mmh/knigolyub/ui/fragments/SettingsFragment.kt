@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmh.knigolyub.R
 
-class settingsFragment : Fragment() {
+class SettingsFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

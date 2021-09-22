@@ -86,9 +86,13 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
     //bubble bottom navigation tabs
     implementation  'io.ak1:bubbletabbar:1.0.8'
+
+    //PDF reader library
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
 
 //    //Parse
 //    ext {
