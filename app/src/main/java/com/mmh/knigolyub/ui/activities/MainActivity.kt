@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mmh.knigolyub.R
 import com.mmh.knigolyub.databinding.ActivityMainBinding
-import com.mmh.knigolyub.ui.fragments.*
+import com.mmh.knigolyub.ui.fragments.BooksFragment
+import com.mmh.knigolyub.ui.fragments.ProfileFragment
+import com.mmh.knigolyub.ui.fragments.ProgressFragment
+import com.mmh.knigolyub.ui.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         if (savedInstanceState == null) {
-            transactionOperation(ReaderFragment())
+            transactionOperation(BooksFragment())
         }
 
         binding.bubbleBottomBar.addBubbleListener { id ->

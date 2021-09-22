@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mmh.knigolyub" >
+    package="com.mmh.knigolyub">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -15,7 +15,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Knigolyub" >
+        android:theme="@style/Theme.Knigolyub">
+        <activity
+            android:name=".ui.activities.ReaderActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.activities.SignUpStudent"
             android:exported="true" />
@@ -30,7 +33,7 @@
             android:exported="true" />
         <activity
             android:name=".ui.activities.SplashScreen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +42,7 @@
         </activity>
         <activity
             android:name=".ui.activities.MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,7 +53,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
         <meta-data
             android:name="com.parse.SERVER_URL"
             android:value="@string/ParseAPI" />
