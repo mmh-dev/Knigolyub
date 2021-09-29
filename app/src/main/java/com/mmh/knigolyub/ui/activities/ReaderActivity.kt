@@ -7,6 +7,7 @@ import com.mmh.knigolyub.R
 import com.mmh.knigolyub.databinding.ActivityReaderBinding
 import com.mmh.knigolyub.ui.fragments.ReaderFragment
 
+
 class ReaderActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityReaderBinding
@@ -19,6 +20,7 @@ class ReaderActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             transactionOperation(ReaderFragment())
         }
+
     }
 
     private fun transactionOperation(fragment: Fragment) {

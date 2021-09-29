@@ -6,7 +6,11 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="grey">#807F7F</color>
+    <color name="grey">#305F72</color>
     <color name="violet">#9C10FE</color>
     <color name="red">#E35959</color>
+    <color name="books">#e74c3c</color>
+    <color name="progress">#673AB7</color>
+    <color name="profile">#3498db</color>
+    <color name="settings">#2ecc71</color>
 </resources>

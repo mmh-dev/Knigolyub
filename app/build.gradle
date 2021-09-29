@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'realm-android'
 }
 
 android {
@@ -18,9 +19,15 @@ android {
     }
 
     buildTypes {
+        def appId = "<your app ID here>"  // Replace with proper Application ID
+        debug {
+            buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
+        }
         release {
+            buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -34,6 +41,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+}
+
+realm {
+    syncEnabled = true
 }
 
 dependencies {
@@ -67,26 +78,14 @@ dependencies {
     implementation( 'com.github.thekhaeng:pushdown-anim-click:1.1.1' ){
         exclude group: 'com.android.support'}
 
-//    //Google services
-//    implementation 'com.google.android.gms:play-services-location:18.0.0'
-//    implementation ('com.google.apis:google-api-services-drive:v3-rev136-1.25.0')
-//            {
-//                exclude group: 'org.apache.httpcomponents'
-//            }
-//    implementation ('com.google.api-client:google-api-client-android:1.26.0')
-//            {
-//                exclude group: 'org.apache.httpcomponents'
-//            }
-//    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
-
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
-    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
 
     //bubble bottom navigation tabs
     implementation  'io.ak1:bubbletabbar:1.0.8'
@@ -94,15 +93,8 @@ dependencies {
     //PDF reader library
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
 
-//    //Parse
-//    ext {
-//        parseVersion = "1.26.0"
-//    }
-//    implementation "com.github.parse-community.Parse-SDK-Android:parse:1.26.0"
-//    // for Google login/signup support (optional)
-//    implementation "com.github.parse-community.Parse-SDK-Android:google:$parseVersion"
-//    implementation "com.github.parse-community.Parse-SDK-Android:ktx:$parseVersion"
-//    // for Kotlin coroutines support (optional)
-//    implementation "com.github.parse-community.Parse-SDK-Android:coroutines:$parseVersion"
+    //Realm with MongoDB
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "io.realm:android-adapters:4.0.0"
 
 }

@@ -18,7 +18,9 @@
         android:theme="@style/Theme.Knigolyub">
         <activity
             android:name=".ui.activities.ReaderActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".ui.activities.MainActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
         <activity
             android:name=".ui.activities.SignUpStudent"
             android:exported="true" />
@@ -49,19 +51,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-        <meta-data
-            android:name="com.parse.SERVER_URL"
-            android:value="@string/ParseAPI" />
-        <meta-data
-            android:name="com.parse.APPLICATION_ID"
-            android:value="@string/applicationID" />
-        <meta-data
-            android:name="com.parse.CLIENT_KEY"
-            android:value="@string/clientKey" />
     </application>
 
 </manifest>

@@ -18,3 +18,11 @@ fun Fragment.transactionOperation(fragment: Fragment) {
     transaction?.replace(R.id.fragmentContainer, fragment)
     transaction?.commit()
 }
+
+//fun Context.transactionOperation(fragment: Fragment) {
+//    if (this is Activity){
+//        val transaction = this.fragmentManager.beginTransaction()
+//        transaction.replace(R.id.fragmentContainer, fragment )
+//        transaction.commit()
+//    }
+

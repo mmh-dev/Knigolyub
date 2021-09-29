@@ -3,28 +3,45 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_about.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_arrow_bold.xml" value="0.26875" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_book.xml" value="0.26875" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_bottom_menu_bg.xml" value="0.26875" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_check.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_content.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_eye.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_fullscreen.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_help.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_last_page.xml" value="0.26875" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_night_mode.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_one_page.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_settings.xml" value="0.26875" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_text_white_bg.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_white_bg.xml" value="0.26875" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_white_text_bg.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/ic_zoom_in.xml" value="0.26875" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/drawable/red_button.xml" value="0.26875" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_help.xml" value="0.1" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_reader.xml" value="0.4" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_reader.xml" value="0.264" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_sign_up_student.xml" value="0.264" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_sign_up_teacher.xml" value="0.264" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_sign_up_teacher1.xml" value="0.264" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_sign_up_teacher2.xml" value="0.264" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/activity_splash_screen.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_about_doc.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_books.xml" value="0.264" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_content.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_help.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_profile.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_progress.xml" value="0.2526041666666667" />
-        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_reader.xml" value="0.1" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_reader.xml" value="0.2" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/layout/fragment_settings.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/menu/bottom_menu.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/murod/AndroidStudioProjects/Knigolyub/app/src/main/res/menu/reader_dot_menu.xml" value="0.2526041666666667" />
       </map>
     </option>
   </component>
