@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Knigolyub</string>
+    <string name="default_web_client_id">408851885933-gnp0c3q5nohrbsfrbbhhnf90qd5d2egi.apps.googleusercontent.com</string>
+
+
     <string name="hello_blank_fragment">Hello world</string>
     <string name="knigolyub">Книголюб</string>
     <string name="your_email">Ваш email</string>
@@ -8,7 +11,7 @@
     <string name="enter">Войти</string>
     <string name="remember_me">Запомнить меня</string>
     <string name="forget_password">Забыл пароль?</string>
-    <string name="signIn_with_google">Войти с Google</string>
+    <string name="signIn_with_google">Войти c аккаунтом Google</string>
     <string name="no_account">Еще не зарегистрирован?</string>
     <string name="signUp">Регистрация</string>
     <string name="already_have_account">Уже зарегистрированы?</string>
@@ -39,4 +42,5 @@
     <string name="fullscreen">Полноэкранный вид</string>
     <string name="help">Помощь</string>
     <string name="about_document">О документе</string>
+
 </resources>

@@ -20,7 +20,7 @@ class SplashScreen : AppCompatActivity() {
             .setSubTitle("«Те, кто читает книги, всегда будут управлять теми, кто смотрит телевизор». Билл Гейтс")
             .setSubTitleColor(R.color.white)
             .setTitle(getString(R.string.knigolyub))
-            .setSubTitleSize(16f)
+            .setSubTitleSize(14f)
             .setTitleColor("#FFFFFF")
             .showProgress(true)
             .setProgressColor(R.color.white)

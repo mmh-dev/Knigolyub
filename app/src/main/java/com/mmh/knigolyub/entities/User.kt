@@ -1,18 +1,18 @@
 package com.mmh.knigolyub.entities
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
+import io.realm.annotations.RealmField
 
-@Entity(tableName = "users")
-data class User(
-    @PrimaryKey(autoGenerate = true) var userId: Int = 0,
-    var name: String,
-    var password: String,
-    var email: String,
-    var school: String,
-    var grade: Int,
-    var gradeLetter: String,
-    var isMale: Boolean,
-    var phone: Int,
-    var status: String
-)
+open class User(
+    @PrimaryKey @RealmField("_userId") var userId: Int = 0,
+    var name: String? = null,
+    var password: String? = null,
+    var email: String? = null,
+    var school: String? = null,
+    var grade: Int? = null,
+    var gradeLetter: String? = null,
+    var isMale: Boolean? = null,
+    var phone: Int? = null,
+    var status: String? = null
+) : RealmObject()

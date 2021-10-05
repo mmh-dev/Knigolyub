@@ -28,10 +28,6 @@ class BooksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        lifecycleScope.launch {
-//            viewModel.clearUsers()
-//        }
-
         binding.button.setOnClickListener {
             startActivity(Intent(requireActivity(), ReaderActivity::class.java))
         }

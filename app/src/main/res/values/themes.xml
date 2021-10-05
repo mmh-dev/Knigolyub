@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Knigolyub" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimary">@color/violet</item>
         <item name="colorPrimaryVariant">@color/violet</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="android:fontFamily">@font/comic_sans</item>
