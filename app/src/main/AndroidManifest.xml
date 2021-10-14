@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Knigolyub">
         <activity
+            android:name=".admin.AdminBookConfigActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.activities.ReaderActivity"
             android:exported="true"
             android:parentActivityName=".ui.activities.MainActivity"

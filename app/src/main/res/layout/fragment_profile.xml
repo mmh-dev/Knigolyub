@@ -1,14 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profle" />
 
-</FrameLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:backgroundTint="@color/violet"
+            app:shapeAppearanceOverlay="@style/BottomCornerRadius">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_img"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity=""
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <TextView
+        android:id="@+id/profile_name_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Имя"
+        android:textColor="@color/grey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/nameLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
+
+    <TextView
+        android:id="@+id/profile_name_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="Beksultan Suleimanov"
+        android:textColor="@color/violet"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_name_text1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintTop_toTopOf="@+id/profile_name_text1" />
+
+    <View
+        android:id="@+id/nameLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/profile_school_text1"
+        app:layout_constraintEnd_toEndOf="@id/profile_name_text"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/profile_name_text1"
+        app:layout_constraintTop_toBottomOf="@+id/profile_name_text1" />
+
+    <TextView
+        android:id="@+id/profile_school_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Школа"
+        android:textColor="@color/grey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/schoolLine"
+        app:layout_constraintStart_toStartOf="@+id/profile_name_text1"
+        app:layout_constraintTop_toBottomOf="@+id/nameLine" />
+
+    <TextView
+        android:id="@+id/profile_school_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="№7 им. Нариманова"
+        android:textColor="@color/violet"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_school_text1"
+        app:layout_constraintEnd_toEndOf="@+id/profile_name_text"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintTop_toTopOf="@+id/profile_school_text1" />
+
+    <View
+        android:id="@+id/schoolLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/profile_class_text1"
+        app:layout_constraintEnd_toEndOf="@id/profile_name_text"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/profile_name_text1"
+        app:layout_constraintTop_toBottomOf="@+id/profile_school_text1" />
+
+    <TextView
+        android:id="@+id/profile_class_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Класс"
+        android:textColor="@color/grey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/classLine"
+        app:layout_constraintStart_toStartOf="@+id/profile_name_text1"
+        app:layout_constraintTop_toBottomOf="@+id/schoolLine" />
+
+    <TextView
+        android:id="@+id/profile_class_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="5 - А"
+        android:textColor="@color/violet"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_class_text1"
+        app:layout_constraintEnd_toEndOf="@+id/profile_name_text"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintTop_toTopOf="@+id/profile_class_text1" />
+
+    <View
+        android:id="@+id/classLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/profileMyProgressBtn"
+        app:layout_constraintEnd_toEndOf="@id/profile_name_text"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/profile_name_text1"
+        app:layout_constraintTop_toBottomOf="@+id/profile_class_text1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/profileMyProgressBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/violet_btn_bg"
+        android:text="Мой прогресс"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/profile_logout_img"
+        app:layout_constraintEnd_toEndOf="@+id/profile_name_text"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/profile_name_text1"
+        app:layout_constraintTop_toBottomOf="@+id/classLine" />
+
+    <ImageView
+        android:id="@+id/profile_logout_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/profile_logout_text"
+        app:layout_constraintTop_toBottomOf="@+id/profileMyProgressBtn" />
+
+    <TextView
+        android:id="@+id/profile_logout_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Выход из профиля"
+        android:textColor="@color/violet"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/profileMyProgressBtn"
+        app:layout_constraintStart_toStartOf="@+id/profileMyProgressBtn"
+        app:layout_constraintTop_toTopOf="@+id/profile_logout_img" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

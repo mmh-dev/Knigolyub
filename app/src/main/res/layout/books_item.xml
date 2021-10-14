@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/rounded_book_Image"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/book_example" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/bookTitle"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="5dp"
+            android:text="Война и мир"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/bookAuthor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/bookAuthor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Лев Толстой"
+            android:textColor="@color/violet"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/countOfDimonds"
+            app:layout_constraintEnd_toStartOf="@+id/bookProgress"
+            app:layout_constraintStart_toStartOf="@+id/bookTitle"
+            app:layout_constraintTop_toBottomOf="@+id/bookTitle" />
+
+        <TextView
+            android:id="@+id/countOfDimonds"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/violet"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/publicYearText"
+            app:layout_constraintEnd_toStartOf="@+id/bookDiamond"
+            app:layout_constraintStart_toStartOf="@+id/bookTitle"
+            app:layout_constraintTop_toBottomOf="@+id/bookAuthor" />
+
+
+        <ImageView
+            android:id="@+id/bookDiamond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_diamond"
+            app:layout_constraintBottom_toBottomOf="@+id/countOfDimonds"
+            app:layout_constraintStart_toEndOf="@+id/countOfDimonds"
+            app:layout_constraintTop_toTopOf="@+id/countOfDimonds" />
+
+        <TextView
+            android:id="@+id/publicYearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Год издания:"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="@+id/bookTitle"
+            app:layout_constraintTop_toBottomOf="@+id/countOfDimonds" />
+
+        <TextView
+            android:id="@+id/publicYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="2008"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/publicYearText"
+            app:layout_constraintStart_toEndOf="@+id/publicYearText"
+            app:layout_constraintTop_toTopOf="@+id/publicYearText" />
+        <TextView
+            android:id="@+id/bookPagesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Страниц: "
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/publicYear"
+            app:layout_constraintStart_toEndOf="@+id/publicYear"
+            app:layout_constraintTop_toTopOf="@+id/publicYear" />
+        <TextView
+            android:id="@+id/bookPages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="300"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bookPagesText"
+            app:layout_constraintStart_toEndOf="@+id/bookPagesText"
+            app:layout_constraintTop_toTopOf="@+id/bookPagesText" />
+
+        <com.vaibhavlakhera.circularprogressview.CircularProgressView
+            android:id="@+id/bookProgress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:animate="true"
+            app:animateDuration="600"
+            app:fillColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bookTitle"
+            app:progressColor="@color/red"
+            app:progressInterpolator="@android:anim/accelerate_decelerate_interpolator"
+            app:progressTextColor="@color/progressTextColor"
+            app:progressTextEnabled="true"
+            app:progressTextSize="14sp"
+            app:progressTextType="percent"
+            app:progressValue="62"
+            app:progressWidth="5dp"
+            app:startAngle="270"
+            app:totalColor="@color/progressLeftcolor"
+            app:totalValue="100"
+            app:totalWidth="5dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>
+
+
+
+
