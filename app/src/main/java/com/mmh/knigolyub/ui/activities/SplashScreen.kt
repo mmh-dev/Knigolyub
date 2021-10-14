@@ -32,7 +32,7 @@ class SplashScreen : AppCompatActivity() {
 
         Splashy.onComplete(object : Splashy.OnComplete {
             override fun onComplete() {
-                startActivity(Intent(this@SplashScreen, Login::class.java))
+                startActivity(Intent(this@SplashScreen, MainActivity::class.java))
             }
 
         })

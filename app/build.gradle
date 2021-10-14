@@ -19,12 +19,7 @@ android {
     }
 
     buildTypes {
-        def appId = "<your app ID here>"  // Replace with proper Application ID
-        debug {
-            buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
-        }
         release {
-            buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
