@@ -8,11 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.mmh.knigolyub.databinding.FragmentBooksBinding
-import com.mmh.knigolyub.entities.Book
-import com.mmh.knigolyub.ui.activities.MainActivity
 import com.mmh.knigolyub.viewmodel.BookViewModel
 import com.mmh.knigolyub.viewmodel.UserViewModel
-import io.realm.kotlin.where
 
 
 class BooksFragment : Fragment() {
@@ -34,21 +31,9 @@ class BooksFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.findBtn.setOnClickListener {
-//            deleteBook()
-            val allBooks = bookViewModel.getAllBooks()
-            Log.i("tag", allBooks.size.toString())
-            for (book in allBooks) {
-                Log.i("tag", book.author.toString())
-            }
-        }
-    }
 
-    private fun deleteBook() {
-        MainActivity.userRealm?.executeTransactionAsync {
-            val book = it.where<Book>()
-                .equalTo("title", "new title")
-                .findFirst()
-            book?.deleteFromRealm() // здесь производится удаление объекта
+            val books = bookViewModel.getAllBooks()
+            Log.i("tag1", books[2].author.toString())
         }
     }
 }

@@ -11,12 +11,25 @@ class BookViewModel : ViewModel() {
     fun getAllBooks(): List<Book> {
         val allBooks = mutableListOf<Book>()
         MainActivity.userRealm?.executeTransactionAsync {
-            val realmBooks = it.where<Book>().findAll()
+            val realmBooks = it
+                .where<Book>()
+                .findAll()
             for (book in realmBooks) {
                 allBooks.add(book)
             }
         }
         return allBooks
+    }
+
+    private fun getBooksWithFilter(param: String, value: String): List<Book> {
+        val books = mutableListOf<Book>()
+        MainActivity.userRealm?.executeTransactionAsync {
+            val allBooks = it
+                .where<Book>()
+                .equalTo(param, value)
+                .findAll()
+        }
+        return books
     }
 
     fun addNewBook(book: Book) {
@@ -35,8 +48,14 @@ class BookViewModel : ViewModel() {
         }
     }
 
-    fun deleteBook(book: Book) {
-
+    fun deleteBook(param: String, value: String) {
+        MainActivity.userRealm?.executeTransactionAsync {
+            val book = it
+                .where<Book>()
+                .equalTo(param, value)
+                .findFirst()
+            book?.deleteFromRealm()
+        }
     }
 
     private fun changeBookParam(book: Book, param: String, newValue: String): Book {
