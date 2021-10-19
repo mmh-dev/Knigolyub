@@ -1,27 +1,35 @@
 package com.mmh.knigolyub.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.mmh.knigolyub.entities.Book
+import com.mmh.knigolyub.realmSync.RealmLiveData
 import com.mmh.knigolyub.ui.activities.MainActivity
+import io.realm.RealmModel
+import io.realm.RealmResults
 import io.realm.kotlin.where
 
 
 class BookViewModel : ViewModel() {
 
-    fun getAllBooks(): List<Book> {
-        val allBooks = mutableListOf<Book>()
-        MainActivity.userRealm?.executeTransactionAsync {
-            val realmBooks = it
-                .where<Book>()
-                .findAll()
-            for (book in realmBooks) {
-                allBooks.add(book)
-            }
-        }
-        return allBooks
+    //    fun getAllBooks(): LiveData<List<Book>> {
+//        val allBooks: LiveData<List<Book>>()
+//        MainActivity.userRealm?.executeTransactionAsync{
+//            val results = it
+//                .where<Book>()
+//                .findAll()
+//            allBooks.addAll(it.copyFromRealm(results))
+//            Log.i("tag", allBooks.size.toString())
+//        }
+//        return allBooks
+//    }
+    fun <T : RealmModel> RealmResults<T>.asLiveData() = RealmLiveData<T>(this)
+
+    fun getBooksLiveData(): LiveData<RealmResults<Book>> {
+        return MainActivity.userRealm?.where<Book>()?.findAllAsync()
     }
 
-    private fun getBooksWithFilter(param: String, value: String): List<Book> {
+    fun getBooksWithFilter(param: String, value: String): List<Book> {
         val books = mutableListOf<Book>()
         MainActivity.userRealm?.executeTransactionAsync {
             val allBooks = it
@@ -81,6 +89,4 @@ class BookViewModel : ViewModel() {
         }
         return book
     }
-
-
 }

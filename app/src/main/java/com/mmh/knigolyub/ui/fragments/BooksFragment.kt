@@ -32,8 +32,8 @@ class BooksFragment : Fragment() {
 
         binding.findBtn.setOnClickListener {
 
-            val books = bookViewModel.getAllBooks()
-            Log.i("tag1", books[2].author.toString())
+            val books = bookViewModel.getBooksLiveData()
+            Log.i("tag1", books?.size.toString())
         }
     }
 }
