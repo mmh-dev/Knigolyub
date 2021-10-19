@@ -3,13 +3,23 @@ package com.mmh.knigolyub.entities
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.RealmField
+import java.util.*
 
-open class Book(
-    @PrimaryKey @RealmField("_bookId") var bookId: Int = 0,
-    var title: String? = null,
-    var author: String? = null,
-    var publishYear: Int? = null,
-    var numberOfPages: Int? = null,
-    var readerId: Int? = null,
-    var progress: Int? = null
-) : RealmObject()
+open class Book() : RealmObject() {
+
+    @PrimaryKey
+    @RealmField("_id")
+    var bookId: String = UUID.randomUUID().toString()
+    var title: String? = null
+    var author: String? = null
+    var publishYear: String? = null
+    var numberOfPages: String? = null
+    var progress: String? = null
+    var readerId: String? = null
+
+
+}
+
+
+
+

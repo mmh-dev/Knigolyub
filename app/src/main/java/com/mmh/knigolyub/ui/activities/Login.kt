@@ -10,9 +10,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import com.mmh.knigolyub.R
+import com.mmh.knigolyub.*
 import com.mmh.knigolyub.databinding.ActivityLoginBinding
-import com.mmh.knigolyub.mongoDbAPp
 import com.mmh.knigolyub.utils.RC_SIGN_IN
 import com.mmh.knigolyub.utils.showToast
 import com.thekhaeng.pushdownanim.PushDownAnim
@@ -77,7 +76,7 @@ class Login : AppCompatActivity() {
     }
 
     private fun signInWithEmail(userEmail: String, userPassword: String) {
-        mongoDbAPp.loginAsync(Credentials.emailPassword(userEmail, userPassword), App.Callback {
+        app.loginAsync(Credentials.emailPassword(userEmail, userPassword), App.Callback {
             if (it.isSuccess) {
                 showToast("Welcome!")
                 startActivity(Intent(this@Login, MainActivity::class.java))
@@ -107,7 +106,7 @@ class Login : AppCompatActivity() {
             val account: GoogleSignInAccount? = task?.result
             val authorizationCode: String? = account?.serverAuthCode
             val googleCredentials: Credentials = Credentials.google(authorizationCode)
-            mongoDbAPp.loginAsync(googleCredentials) {
+            app.loginAsync(googleCredentials) {
                 if (it.isSuccess) {
                     showToast("Welcome!")
                     startActivity(Intent(this@Login, MainActivity::class.java))

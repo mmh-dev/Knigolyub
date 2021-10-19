@@ -3,9 +3,11 @@ package com.mmh.knigolyub.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.mmh.knigolyub.entities.Book
+import com.mmh.knigolyub.realmSync.RealmLiveData
 import com.mmh.knigolyub.ui.activities.MainActivity
 import io.realm.RealmModel
 import io.realm.RealmResults
+import io.realm.kotlin.where
 
 
 class BookViewModel : ViewModel() {
