@@ -18,17 +18,17 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="@dimen/marginForTIL"
+        android:layout_marginTop="@dimen/marginForTIL"
+        android:layout_marginEnd="@dimen/marginForTIL"
         android:ems="10"
         android:hint="Введите вопрос"
         android:inputType="textPersonName"
         app:boxStrokeColor="@color/violet"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadiusTIL"
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="1dp"
         app:endIconMode="clear_text"
@@ -42,7 +42,7 @@
             android:id="@+id/addQuestionText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/textSizeForRegularTexts" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -50,7 +50,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/marginForTIL"
         android:ems="10"
         android:hint="Вариант ответа"
         android:inputType="textPersonName"
@@ -58,10 +58,10 @@
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="1dp"
         app:endIconMode="clear_text"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadiusTIL"
         app:layout_constraintBottom_toTopOf="@+id/variant2TIL"
         app:layout_constraintEnd_toEndOf="@+id/addQuestionTIL"
         app:layout_constraintHorizontal_bias="0.5"
@@ -72,7 +72,7 @@
             android:id="@+id/variant1Text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/textSizeForRegularTexts" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -80,7 +80,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/marginForTIL"
         android:ems="10"
         android:hint="Вариант ответа"
         android:inputType="textPersonName"
@@ -88,10 +88,10 @@
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="1dp"
         app:endIconMode="clear_text"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadiusTIL"
         app:layout_constraintBottom_toTopOf="@+id/variant3TIL"
         app:layout_constraintEnd_toEndOf="@+id/variant1TIL"
         app:layout_constraintHorizontal_bias="0.5"
@@ -102,7 +102,7 @@
             android:id="@+id/variant2Text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/textSizeForRegularTexts" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -110,7 +110,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/marginForTIL"
         android:ems="10"
         android:hint="Вариант ответа"
         android:inputType="textPersonName"
@@ -118,10 +118,10 @@
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="1dp"
         app:endIconMode="clear_text"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadiusTIL"
         app:layout_constraintBottom_toTopOf="@+id/variant4TIL"
         app:layout_constraintEnd_toEndOf="@id/variant1TIL"
         app:layout_constraintHorizontal_bias="0.5"
@@ -132,7 +132,7 @@
             android:id="@+id/variant3Text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/textSizeForRegularTexts" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -140,7 +140,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/marginForTIL"
         android:ems="10"
         android:hint="Вариант ответа"
         android:inputType="textPersonName"
@@ -148,10 +148,10 @@
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="1dp"
         app:endIconMode="clear_text"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadiusTIL"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadiusTIL"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="@id/variant1TIL"
         app:layout_constraintHorizontal_bias="0.5"
@@ -162,14 +162,14 @@
             android:id="@+id/variant4Text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/textSizeForRegularTexts" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="@dimen/marginForTIL"
         android:src="@drawable/ic_checked"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
@@ -193,7 +193,7 @@
         android:background="@drawable/violet_btn_bg"
         android:text="Сохранить"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="@dimen/textSizeForButtons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -204,7 +204,7 @@
         android:id="@+id/variant1RB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="true"
+        android:checked="false"
         app:layout_constraintBottom_toBottomOf="@+id/variant1TIL"
         app:layout_constraintEnd_toEndOf="@+id/variant1TIL"
         app:layout_constraintTop_toTopOf="@+id/variant1TIL" />

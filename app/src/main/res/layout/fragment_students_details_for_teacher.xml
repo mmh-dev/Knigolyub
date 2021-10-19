@@ -11,13 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.23" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/studentProgressImg"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="@dimen/editProfileFotoSize"
+        android:layout_height="@dimen/editProfileFotoSize"
+        android:layout_marginEnd="@dimen/marginForTIL"
         android:src="@drawable/img"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,11 +28,11 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginStart="@dimen/marginProfileTIL"
+        android:layout_marginEnd="@dimen/marginProfileTIL"
         android:text="Касимова Венера"
         android:textColor="@color/violet"
-        android:textSize="24sp"
+        android:textSize="@dimen/profileNameBigTextSize"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toStartOf="@+id/studentProgressImg"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text="Читает с:"
         android:textColor="@color/grey"
-        android:textSize="12sp"
+        android:textSize="@dimen/textSizeForRegularTexts"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toStartOf="@+id/progressReadTime"
         app:layout_constraintHorizontal_bias="0.5"
@@ -54,8 +54,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="19dp"
-        android:layout_height="19dp"
+        android:layout_width="@dimen/smallIconSize"
+        android:layout_height="@dimen/smallIconSize"
         android:src="@drawable/ic_watch_later_black"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:text="15.03.2021"
         android:textColor="@color/grey"
-        android:textSize="12sp"
+        android:textSize="@dimen/textSizeForRegularTexts"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toStartOf="@+id/studentProgressImg"
         app:layout_constraintHorizontal_bias="0.5"
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:text="Статистика"
         android:textColor="@color/violet"
-        android:textSize="25dp"
+        android:textSize="@dimen/profileNameBigTextSize"
         app:layout_constraintBottom_toTopOf="@+id/progressMaterialCardViewForChapters"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -101,17 +101,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.51" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/progressMaterialCardViewForChapters"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="@dimen/marginForTIL"
+        android:layout_marginEnd="@dimen/recyclerViewMargin"
         android:backgroundTint="@color/white"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="25dp"
+        app:cardCornerRadius="@dimen/cardAllCornersRadius"
+        app:cardElevation="@dimen/cardElevation"
         app:layout_constraintBottom_toTopOf="@+id/progressMaterialCardViewForPages"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -122,7 +122,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:padding="@dimen/constraintInside">
 
             <ImageView
                 android:id="@+id/progressDiamond"
@@ -140,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:text="16"
                 android:textColor="@color/violet"
-                android:textSize="18sp"
+                android:textSize="@dimen/textSizeProfileTIL"
                 app:layout_constraintBottom_toTopOf="@+id/progressReadenText"
                 app:layout_constraintEnd_toEndOf="@+id/progressReadenText"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -153,7 +153,7 @@
                 android:layout_height="wrap_content"
                 android:text="глав прочитано"
                 android:textColor="@color/grey"
-                android:textSize="12sp"
+                android:textSize="@dimen/textSizeForSmallTexts"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -168,12 +168,11 @@
         android:id="@+id/progressMaterialCardForBooks"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="@dimen/recyclerViewMargin"
+        android:layout_marginEnd="@dimen/marginForTIL"
         android:backgroundTint="@color/white"
-        android:padding="15dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="25dp"
+        app:cardCornerRadius="@dimen/cardAllCornersRadius"
+        app:cardElevation="@dimen/cardElevation"
         app:layout_constraintBottom_toBottomOf="@+id/progressMaterialCardViewForChapters"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline3"
@@ -182,7 +181,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:padding="@dimen/constraintInside">
 
             <ImageView
                 android:id="@+id/progressCrown"
@@ -202,7 +201,7 @@
                 android:layout_height="wrap_content"
                 android:text="2"
                 android:textColor="@color/violet"
-                android:textSize="18sp"
+                android:textSize="@dimen/textSizeProfileTIL"
                 app:layout_constraintBottom_toTopOf="@+id/progressBookReadenText"
                 app:layout_constraintEnd_toEndOf="@+id/progressBookReadenText"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -215,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:text="книг прочитано"
                 android:textColor="@color/grey"
-                android:textSize="12sp"
+                android:textSize="@dimen/textSizeForSmallTexts"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -230,11 +229,11 @@
         android:id="@+id/progressMaterialCardViewForPages"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="@dimen/marginForTIL"
+        android:layout_marginEnd="@dimen/recyclerViewMargin"
         android:backgroundTint="@color/white"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="25dp"
+        app:cardCornerRadius="@dimen/cardAllCornersRadius"
+        app:cardElevation="@dimen/cardElevation"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -244,7 +243,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:padding="@dimen/constraintInside">
 
             <ImageView
                 android:id="@+id/progressBookPage"
@@ -262,7 +261,7 @@
                 android:layout_height="wrap_content"
                 android:text="1253"
                 android:textColor="@color/violet"
-                android:textSize="18sp"
+                android:textSize="@dimen/textSizeProfileTIL"
                 app:layout_constraintBottom_toTopOf="@+id/progressPageReadenText"
                 app:layout_constraintEnd_toEndOf="@+id/progressPageReadenText"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -275,7 +274,7 @@
                 android:layout_height="wrap_content"
                 android:text="страниц прочитано"
                 android:textColor="@color/grey"
-                android:textSize="12sp"
+                android:textSize="@dimen/textSizeForSmallTexts"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -292,8 +291,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="25dp"
+        app:cardCornerRadius="@dimen/cardAllCornersRadius"
+        app:cardElevation="@dimen/cardElevation"
         app:layout_constraintBottom_toBottomOf="@+id/progressMaterialCardViewForPages"
         app:layout_constraintEnd_toEndOf="@+id/progressMaterialCardForBooks"
         app:layout_constraintStart_toStartOf="@+id/progressMaterialCardForBooks"
@@ -302,7 +301,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:padding="@dimen/constraintInside">
 
             <ImageView
                 android:id="@+id/progressHoursIcon"
@@ -320,7 +319,7 @@
                 android:layout_height="wrap_content"
                 android:text="1253"
                 android:textColor="@color/violet"
-                android:textSize="18sp"
+                android:textSize="@dimen/textSizeProfileTIL"
                 app:layout_constraintBottom_toTopOf="@+id/progressHoursReadenText"
                 app:layout_constraintEnd_toEndOf="@+id/progressHoursReadenText"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -333,7 +332,7 @@
                 android:layout_height="wrap_content"
                 android:text="часов потрачено"
                 android:textColor="@color/grey"
-                android:textSize="12sp"
+                android:textSize="@dimen/textSizeForSmallTexts"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -352,7 +351,7 @@
         android:layout_height="wrap_content"
         android:text="Книги которые читает"
         android:textColor="@color/violet"
-        android:textSize="20sp"
+        android:textSize="@dimen/textSizeProfileTIL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline5" />
@@ -361,9 +360,7 @@
         android:id="@+id/recyclerViewForstudentDetails"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_margin="@dimen/recyclerViewMargin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

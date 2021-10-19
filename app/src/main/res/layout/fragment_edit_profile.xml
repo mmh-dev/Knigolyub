@@ -26,7 +26,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/editProfileMCV"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="@dimen/profileCardViewHeight"
                     android:backgroundTint="@color/violet"
                     app:shapeAppearanceOverlay="@style/BottomCornerRadius">
 
@@ -36,8 +36,8 @@
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/editProfile_img"
-                            android:layout_width="150dp"
-                            android:layout_height="150dp"
+                            android:layout_width="@dimen/editProfileFotoSize"
+                            android:layout_height="@dimen/editProfileFotoSize"
                             android:layout_gravity=""
                             android:fitsSystemWindows="true"
                             android:scaleType="centerCrop"
@@ -67,9 +67,9 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="@dimen/marginProfileTIL"
+                android:layout_marginTop="@dimen/marginProfileTIL"
+                android:layout_marginEnd="@dimen/marginProfileTIL"
                 android:ems="10"
                 android:hint="Имя"
                 android:inputType="textPersonName"
@@ -85,7 +85,7 @@
                     android:id="@+id/editProfileNameText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/textSizeProfileTIL"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.dev.materialspinner.MaterialSpinner
@@ -93,7 +93,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/marginForTIL"
                 app:layout_constraintEnd_toEndOf="@+id/editProfileName"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/editProfileName"
@@ -120,13 +120,13 @@
                     android:id="@+id/editProfileClassText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/textSizeProfileTIL" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/editProfileClassType"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="120dp"
+                android:layout_width="@dimen/editProfileClassDegreeWidth"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="A"
@@ -142,7 +142,7 @@
                     android:id="@+id/editProfileClassTypeText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/textSizeProfileTIL" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -150,7 +150,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/marginProfileTIL"
                 android:ems="10"
                 android:hint="email"
                 android:inputType="textPersonName"
@@ -166,7 +166,7 @@
                     android:id="@+id/editProfileEmailText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/textSizeProfileTIL" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -174,7 +174,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/marginProfileTIL"
                 android:ems="10"
                 android:hint="Старый пароль"
                 android:inputType="textPersonName"
@@ -190,7 +190,7 @@
                     android:id="@+id/editProfileOldPasswordText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/textSizeProfileTIL" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -198,7 +198,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/marginProfileTIL"
                 android:ems="10"
                 android:hint="Новый пароль"
                 android:inputType="textPersonName"
@@ -214,7 +214,7 @@
                     android:id="@+id/editProfileNewPasswordText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/textSizeProfileTIL" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -234,7 +234,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checkedButton="@id/editProfileRadioMale"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/marginProfileTIL"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -245,7 +245,7 @@
                     android:id="@+id/editProfileRadioMale"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="@dimen/marginProfileTIL"
                     android:text="Мужской" />
 
                 <RadioButton
@@ -260,11 +260,11 @@
                 android:id="@+id/editProfileSaveBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/marginProfileTIL"
                 android:background="@drawable/violet_btn_bg"
                 android:text="Сохранить"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/textSizeProfileTIL"
                 app:layout_constraintEnd_toEndOf="@+id/editProfileName"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/editProfileName"
