@@ -7,28 +7,22 @@ import io.realm.kotlin.where
 
 class UserViewModel : ViewModel() {
 
-    fun getAllUsers(): List<User> {
-        val allUsers = mutableListOf<User>()
-        MainActivity.userRealm?.executeTransactionAsync {
-            val realmUser = it
-                .where<User>()
-                .findAll()
-            for (user in realmUser) {
-                allUsers.add(user)
-            }
-        }
-        return allUsers
+    fun getAllStudents(): List<User> {
+        val students = mutableListOf<User>()
+        val results = MainActivity.userRealm?.where<User>()
+            ?.findAll()
+        MainActivity.userRealm?.copyFromRealm(results)?.let { students.addAll(it) }
+        return students
     }
 
-    private fun getUserWithFilter(param: String, value: String): List<User> {
-        val users = mutableListOf<User>()
-        MainActivity.userRealm?.executeTransactionAsync {
-            val allUser = it
-                .where<User>()
-                .equalTo(param, value)
-                .findAll()
-        }
-        return users
+    fun getStudentsOfClass(grade: String, gradeLetter: String): List<User> {
+        val students = mutableListOf<User>()
+        val results = MainActivity.userRealm?.where<User>()
+            ?.contains("grade", grade)
+            ?.contains("gradeLetter", gradeLetter)
+            ?.findAll()
+        MainActivity.userRealm?.copyFromRealm(results)?.let { students.addAll(it) }
+        return students
     }
 
     fun addNewUser(user: User) {

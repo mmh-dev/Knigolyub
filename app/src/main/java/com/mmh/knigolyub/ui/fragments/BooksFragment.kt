@@ -1,13 +1,13 @@
 package com.mmh.knigolyub.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.mmh.knigolyub.databinding.FragmentBooksBinding
+import com.mmh.knigolyub.utils.showToast
 import com.mmh.knigolyub.viewmodel.BookViewModel
 import com.mmh.knigolyub.viewmodel.UserViewModel
 
@@ -32,8 +32,8 @@ class BooksFragment : Fragment() {
 
         binding.findBtn.setOnClickListener {
 
-            val books = bookViewModel.getBooksLiveData()
-            Log.i("tag1", books?.size.toString())
+            val book = bookViewModel.getBookWithTitleAndAuthor("Tom and Finn", "Marco Polo")
+            showToast(book?.author.toString())
         }
     }
 }
