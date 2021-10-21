@@ -14,7 +14,6 @@ open class Book(
     var numberOfPages: String? = null,
     var progress: String? = null,
     var readerId: String? = null,
-    var joinedAt: Date? = null,
 ) : RealmObject()
 
 

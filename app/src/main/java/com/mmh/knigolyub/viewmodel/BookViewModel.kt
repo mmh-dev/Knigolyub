@@ -1,5 +1,6 @@
 package com.mmh.knigolyub.viewmodel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mmh.knigolyub.entities.Book
 import com.mmh.knigolyub.entities.Chapter
@@ -9,13 +10,15 @@ import io.realm.kotlin.where
 
 class BookViewModel : ViewModel() {
 
+    var booksLiveData = MutableLiveData<MutableList<Book>>()
+    var books = mutableListOf<Book>()
 
-    fun getAllBooks(): List<Book> {
-        val books = mutableListOf<Book>()
+
+    fun getAllBooks() {
         val results = MainActivity.userRealm?.where<Book>()
             ?.findAll()
         MainActivity.userRealm?.copyFromRealm(results)?.let { books.addAll(it) }
-        return books
+        booksLiveData.value = books
     }
 
     fun getBookWithTitleAndAuthor(title: String, author: String): Book? {
@@ -36,7 +39,7 @@ class BookViewModel : ViewModel() {
 
     fun getChaptersOfBook(school: String, bookId: String): List<Chapter> {
         val chapters = mutableListOf<Chapter>()
-        val results = MainActivity.userRealm?.where<Book>()
+        val results = MainActivity.userRealm?.where<Chapter>()
             ?.contains("school", school)
             ?.contains("bookId", bookId)
             ?.findAll()
@@ -48,6 +51,7 @@ class BookViewModel : ViewModel() {
         MainActivity.userRealm?.executeTransactionAsync {
             it.insert(book)
         }
+        getAllBooks()
     }
 
     fun addNewChapter(chapter: Chapter) {
@@ -64,6 +68,7 @@ class BookViewModel : ViewModel() {
                 .findFirst()!!
             it.insertOrUpdate(changeBookParam(book, param, newValue))
         }
+        getAllBooks()
     }
 
     fun deleteBook(param: String, value: String) {
@@ -74,6 +79,7 @@ class BookViewModel : ViewModel() {
                 .findFirst()
             book?.deleteFromRealm()
         }
+        getAllBooks()
     }
 
     private fun changeBookParam(book: Book, param: String, newValue: String): Book {

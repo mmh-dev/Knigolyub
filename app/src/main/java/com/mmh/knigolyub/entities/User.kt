@@ -16,4 +16,5 @@ open class User(
     var gender: String? = null,
     var phone: String? = null,
     var status: String? = null,
+    var joinedAt: Date? = null,
 ) : RealmObject()

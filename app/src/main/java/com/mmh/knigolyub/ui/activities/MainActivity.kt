@@ -2,6 +2,7 @@ package com.mmh.knigolyub.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mmh.knigolyub.R
@@ -13,12 +14,16 @@ import com.mmh.knigolyub.ui.fragments.ProgressFragment
 import com.mmh.knigolyub.ui.fragments.SettingsFragment
 import com.mmh.knigolyub.utils.PARTITION_VALUE
 import com.mmh.knigolyub.utils.transactionOperation
+import com.mmh.knigolyub.viewmodel.BookViewModel
+import com.mmh.knigolyub.viewmodel.UserViewModel
 import io.realm.Realm
 import io.realm.mongodb.sync.SyncConfiguration
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val bookViewModel: BookViewModel by viewModels()
+    private val userViewModel: UserViewModel by viewModels()
 
     companion object {
         var user: io.realm.mongodb.User? = null

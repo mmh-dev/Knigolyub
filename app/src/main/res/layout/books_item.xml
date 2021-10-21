@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
@@ -101,7 +99,7 @@
             app:layout_constraintTop_toBottomOf="@+id/countOfDimonds" />
 
         <TextView
-            android:id="@+id/publicYear"
+            android:id="@+id/publishedYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -111,6 +109,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/publicYearText"
             app:layout_constraintStart_toEndOf="@+id/publicYearText"
             app:layout_constraintTop_toTopOf="@+id/publicYearText" />
+
         <TextView
             android:id="@+id/bookPagesText"
             android:layout_width="wrap_content"
@@ -119,9 +118,9 @@
             android:text="Страниц: "
             android:textColor="@color/grey"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/publicYear"
-            app:layout_constraintStart_toEndOf="@+id/publicYear"
-            app:layout_constraintTop_toTopOf="@+id/publicYear" />
+            app:layout_constraintBottom_toBottomOf="@+id/publishedYear"
+            app:layout_constraintStart_toEndOf="@+id/publishedYear"
+            app:layout_constraintTop_toTopOf="@+id/publishedYear" />
         <TextView
             android:id="@+id/bookPages"
             android:layout_width="wrap_content"
