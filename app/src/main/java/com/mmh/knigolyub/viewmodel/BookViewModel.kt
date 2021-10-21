@@ -2,6 +2,7 @@ package com.mmh.knigolyub.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.mmh.knigolyub.entities.Book
+import com.mmh.knigolyub.entities.Chapter
 import com.mmh.knigolyub.ui.activities.MainActivity
 import io.realm.kotlin.where
 
@@ -33,9 +34,25 @@ class BookViewModel : ViewModel() {
         return books
     }
 
+    fun getChaptersOfBook(school: String, bookId: String): List<Chapter> {
+        val chapters = mutableListOf<Chapter>()
+        val results = MainActivity.userRealm?.where<Book>()
+            ?.contains("school", school)
+            ?.contains("bookId", bookId)
+            ?.findAll()
+        MainActivity.userRealm?.copyFromRealm(results)?.let { chapters.addAll(it) }
+        return chapters
+    }
+
     fun addNewBook(book: Book) {
         MainActivity.userRealm?.executeTransactionAsync {
             it.insert(book)
+        }
+    }
+
+    fun addNewChapter(chapter: Chapter) {
+        MainActivity.userRealm?.executeTransactionAsync {
+            it.insert(chapter)
         }
     }
 

@@ -5,18 +5,9 @@ import io.realm.annotations.PrimaryKey
 import io.realm.annotations.RealmField
 import java.util.*
 
-open class Book(
+open class Chapter(
     @PrimaryKey @RealmField("_id") var id: String = UUID.randomUUID().toString(),
     var school: String? = null,
+    var bookId: String? = null,
     var title: String? = null,
-    var author: String? = null,
-    var publishYear: String? = null,
-    var numberOfPages: String? = null,
-    var progress: String? = null,
-    var readerId: String? = null,
-    var joinedAt: Date? = null,
 ) : RealmObject()
-
-
-
-

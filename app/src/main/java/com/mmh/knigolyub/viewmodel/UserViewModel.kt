@@ -1,6 +1,7 @@
 package com.mmh.knigolyub.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.mmh.knigolyub.entities.Grade
 import com.mmh.knigolyub.entities.User
 import com.mmh.knigolyub.ui.activities.MainActivity
 import io.realm.kotlin.where
@@ -15,9 +16,10 @@ class UserViewModel : ViewModel() {
         return students
     }
 
-    fun getStudentsOfClass(grade: String, gradeLetter: String): List<User> {
+    fun getStudentsOfGrade(school: String, grade: String, gradeLetter: String): List<User> {
         val students = mutableListOf<User>()
         val results = MainActivity.userRealm?.where<User>()
+            ?.contains("school", school)
             ?.contains("grade", grade)
             ?.contains("gradeLetter", gradeLetter)
             ?.findAll()
@@ -25,9 +27,24 @@ class UserViewModel : ViewModel() {
         return students
     }
 
+    fun getGrades(school: String): List<Grade> {
+        val grades = mutableListOf<Grade>()
+        val results = MainActivity.userRealm?.where<Grade>()
+            ?.contains("school", school)
+            ?.findAll()
+        MainActivity.userRealm?.copyFromRealm(results)?.let { grades.addAll(it) }
+        return grades
+    }
+
     fun addNewUser(user: User) {
         MainActivity.userRealm?.executeTransactionAsync {
             it.insert(user)
+        }
+    }
+
+    fun addNewGrade(grade: Grade) {
+        MainActivity.userRealm?.executeTransactionAsync {
+            it.insert(grade)
         }
     }
 
@@ -46,6 +63,18 @@ class UserViewModel : ViewModel() {
             val user = it
                 .where<User>()
                 .equalTo(param, value)
+                .findFirst()
+            user?.deleteFromRealm()
+        }
+    }
+
+    fun deleteGrade(school: String, grade: String, gradeLetter: String) {
+        MainActivity.userRealm?.executeTransactionAsync {
+            val user = it
+                .where<User>()
+                .equalTo("school", school)
+                .equalTo("grade", grade)
+                .equalTo("gradeLetter", gradeLetter)
                 .findFirst()
             user?.deleteFromRealm()
         }
