@@ -8,8 +8,10 @@ import io.realm.kotlin.where
 
 class UserViewModel : ViewModel() {
 
+    val students = mutableListOf<User>()
+
+
     fun getAllStudents(): List<User> {
-        val students = mutableListOf<User>()
         val results = MainActivity.userRealm?.where<User>()
             ?.findAll()
         MainActivity.userRealm?.copyFromRealm(results)?.let { students.addAll(it) }
@@ -17,7 +19,6 @@ class UserViewModel : ViewModel() {
     }
 
     fun getStudentsOfGrade(school: String, grade: String, gradeLetter: String): List<User> {
-        val students = mutableListOf<User>()
         val results = MainActivity.userRealm?.where<User>()
             ?.contains("school", school)
             ?.contains("grade", grade)
@@ -36,10 +37,11 @@ class UserViewModel : ViewModel() {
         return grades
     }
 
-    fun addNewUser(user: User) {
+    fun addNewReader(user: User) {
         MainActivity.userRealm?.executeTransactionAsync {
             it.insert(user)
         }
+        getAllStudents()
     }
 
     fun addNewGrade(grade: Grade) {
@@ -48,7 +50,7 @@ class UserViewModel : ViewModel() {
         }
     }
 
-    fun updateUser(param: String, oldValue: String, newValue: String) {
+    fun updateReader(param: String, oldValue: String, newValue: String) {
         MainActivity.userRealm?.executeTransactionAsync {
             val user: User = it
                 .where<User>()
@@ -56,9 +58,10 @@ class UserViewModel : ViewModel() {
                 .findFirst()!!
             it.insertOrUpdate(changeUserParam(user, param, newValue))
         }
+        getAllStudents()
     }
 
-    fun deleteUser(param: String, value: String) {
+    fun deleteReader(param: String, value: String) {
         MainActivity.userRealm?.executeTransactionAsync {
             val user = it
                 .where<User>()
@@ -66,6 +69,7 @@ class UserViewModel : ViewModel() {
                 .findFirst()
             user?.deleteFromRealm()
         }
+        getAllStudents()
     }
 
     fun deleteGrade(school: String, grade: String, gradeLetter: String) {
@@ -82,8 +86,11 @@ class UserViewModel : ViewModel() {
 
     private fun changeUserParam(user: User, param: String, newValue: String): User {
         when (param) {
-            "name" -> {
-                user.name = newValue
+            "lastName" -> {
+                user.lastName = newValue
+            }
+            "firstName" -> {
+                user.firstName = newValue
             }
             "password" -> {
                 user.password = newValue

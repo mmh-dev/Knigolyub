@@ -5,24 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.mmh.knigolyub.databinding.FragmentProgressBinding
+import androidx.fragment.app.activityViewModels
+import com.mmh.knigolyub.databinding.FragmentSignUpTeacherBinding
+import com.mmh.knigolyub.entities.User
+import com.mmh.knigolyub.viewmodel.UserViewModel
 
-class ProgressFragment : Fragment() {
+class SignUpTeacherFragment : Fragment() {
+    private lateinit var binding: FragmentSignUpTeacherBinding
+    private val userViewModel: UserViewModel by activityViewModels()
+    private var student = User()
 
-    private lateinit var binding: FragmentProgressBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentProgressBinding.inflate(inflater, container, false)
+        binding = FragmentSignUpTeacherBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
-
 }

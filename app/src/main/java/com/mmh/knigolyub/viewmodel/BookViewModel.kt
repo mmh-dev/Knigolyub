@@ -1,6 +1,5 @@
 package com.mmh.knigolyub.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mmh.knigolyub.entities.Book
 import com.mmh.knigolyub.entities.Chapter
@@ -10,15 +9,14 @@ import io.realm.kotlin.where
 
 class BookViewModel : ViewModel() {
 
-    var booksLiveData = MutableLiveData<MutableList<Book>>()
     var books = mutableListOf<Book>()
 
 
-    fun getAllBooks() {
+    fun getAllBooks(): List<Book> {
         val results = MainActivity.userRealm?.where<Book>()
             ?.findAll()
         MainActivity.userRealm?.copyFromRealm(results)?.let { books.addAll(it) }
-        booksLiveData.value = books
+        return books
     }
 
     fun getBookWithTitleAndAuthor(title: String, author: String): Book? {
@@ -29,7 +27,6 @@ class BookViewModel : ViewModel() {
     }
 
     fun getBookOfReader(readerId: String): List<Book> {
-        val books = mutableListOf<Book>()
         val results = MainActivity.userRealm?.where<Book>()
             ?.contains("readerId", readerId)
             ?.findAll()

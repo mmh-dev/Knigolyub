@@ -1,17 +1,12 @@
 package com.mmh.knigolyub.ui.activities
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import com.mmh.knigolyub.R
 import com.mmh.knigolyub.app
 import com.mmh.knigolyub.databinding.ActivityMainBinding
-import com.mmh.knigolyub.ui.fragments.BooksFragment
-import com.mmh.knigolyub.ui.fragments.ProfileFragment
-import com.mmh.knigolyub.ui.fragments.ProgressFragment
-import com.mmh.knigolyub.ui.fragments.SettingsFragment
+import com.mmh.knigolyub.ui.fragments.LoginFragment
+import com.mmh.knigolyub.ui.fragments.MainFragment
 import com.mmh.knigolyub.utils.PARTITION_VALUE
 import com.mmh.knigolyub.utils.transactionOperation
 import com.mmh.knigolyub.viewmodel.BookViewModel
@@ -34,13 +29,14 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         user = app.currentUser()
         if (user == null) {
-            startActivity(Intent(this, Login::class.java))
+            transactionOperation(LoginFragment())
         } else {
             val config = SyncConfiguration.Builder(user!!, PARTITION_VALUE)
                 .build()
-
             userRealm = Realm.getInstance(config)
         }
+        bookViewModel.getAllBooks()
+        userViewModel.getAllStudents()
     }
 
     override fun onStop() {
@@ -60,19 +56,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        bookViewModel.getAllBooks()
         if (savedInstanceState == null) {
-            transactionOperation(BooksFragment())
-        }
-
-        binding.bubbleBottomBar.addBubbleListener { id ->
-            var fragment: Fragment = BooksFragment()
-            when (id) {
-                R.id.nav_books -> fragment = BooksFragment()
-                R.id.nav_progress -> fragment = ProgressFragment()
-                R.id.nav_profile -> fragment = ProfileFragment()
-                R.id.nav_settings -> fragment = SettingsFragment()
-            }
-            transactionOperation(fragment)
+            transactionOperation(MainFragment())
         }
     }
 }

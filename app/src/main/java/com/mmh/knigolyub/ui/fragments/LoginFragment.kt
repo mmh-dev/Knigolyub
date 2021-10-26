@@ -1,46 +1,58 @@
-package com.mmh.knigolyub.ui.activities
+package com.mmh.knigolyub.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import com.mmh.knigolyub.*
-import com.mmh.knigolyub.databinding.ActivityLoginBinding
+import com.mmh.knigolyub.R
+import com.mmh.knigolyub.app
+import com.mmh.knigolyub.databinding.FragmentLoginBinding
 import com.mmh.knigolyub.utils.RC_SIGN_IN
 import com.mmh.knigolyub.utils.showToast
+import com.mmh.knigolyub.utils.transactionOperation
 import com.thekhaeng.pushdownanim.PushDownAnim
 import io.realm.mongodb.App
 import io.realm.mongodb.Credentials
 
-class Login : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+class LoginFragment : Fragment() {
+
+    private lateinit var binding: FragmentLoginBinding
     private lateinit var userEmail: String
     private lateinit var userPassword: String
     private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onStart() {
         super.onStart()
-//        val account = GoogleSignIn.getLastSignedInAccount(this)
+        //        val account = GoogleSignIn.getLastSignedInAccount(this)
 //        if (account != null) {
 //            startActivity(Intent(this@Login, MainActivity::class.java))
 //        }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentLoginBinding.inflate(layoutInflater)
+        return binding.root
+    }
 
-//        knigolyub.emailPassword.registerUserAsync(email, password, App.Callback {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+//        app.loginAsync(Credentials.anonymous(), App.Callback {
 //            if (it.isSuccess){
-//                Log.i("tag", "create email")
+//                transactionOperation(BooksFragment())
 //            }
 //            else{
 //                showToast("login failure")
@@ -57,7 +69,7 @@ class Login : AppCompatActivity() {
                     signInWithEmail(userEmail, userPassword)
                 }
             signUpLink.setOnClickListener {
-                startActivity(Intent(this@Login, SignUp::class.java))
+                transactionOperation(SignUpFragment())
             }
 
             PushDownAnim.setPushDownAnimTo(googleSignInBtn)
@@ -72,14 +84,14 @@ class Login : AppCompatActivity() {
             .requestServerAuthCode(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
+        googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
     }
 
     private fun signInWithEmail(userEmail: String, userPassword: String) {
         app.loginAsync(Credentials.emailPassword(userEmail, userPassword), App.Callback {
             if (it.isSuccess) {
                 showToast("Welcome!")
-                startActivity(Intent(this@Login, MainActivity::class.java))
+                transactionOperation(BooksFragment())
 
             } else {
                 showToast("login failure")
@@ -109,7 +121,7 @@ class Login : AppCompatActivity() {
             app.loginAsync(googleCredentials) {
                 if (it.isSuccess) {
                     showToast("Welcome!")
-                    startActivity(Intent(this@Login, MainActivity::class.java))
+                    transactionOperation(BooksFragment())
                 } else {
                     Log.e("AUTH", "Failed to log in to MongoDB Realm", it.error)
                 }

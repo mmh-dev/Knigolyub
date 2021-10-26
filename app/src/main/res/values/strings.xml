@@ -2,6 +2,16 @@
     <string name="app_name">Knigolyub</string>
     <string name="default_web_client_id">408851885933-gnp0c3q5nohrbsfrbbhhnf90qd5d2egi.apps.googleusercontent.com</string>
 
+    <string-array name="schools">
+        <item>Средняя школа №7 им. Нариманова</item>
+        <item>Школа-гимназия №2 им. К.Маркса</item>
+        <item>Школа-гимназии №3 им. М.В. Ломоносова</item>
+        <item>Школа-гимназия №5 имени Ж.Боконбаева</item>
+        <item>Средняя школа №6 им. Макаренко</item>
+        <item>Школа-гимназиия №9 имени А.Рудаки</item>
+        <item>Частная школа "Олимп"</item>
+        <item>частная школа "Грамотей"</item>
+    </string-array>
 
     <string name="hello_blank_fragment">Hello world</string>
     <string name="knigolyub">Книголюб</string>
@@ -19,8 +29,8 @@
     <string name="student">ученик</string>
     <string name="your_position">Укажите свой статус</string>
     <string name="student_signUp">Регистрация ученика</string>
-    <string name="name">Ф.И.О</string>
-    <string name="school">Школа</string>
+    <string name="last_name">Фамилия</string>
+    <string name="first_name">Имя</string>
     <string name="grade">Класс</string>
     <string name="grade_letter">Буква</string>
     <string name="male">Мужской</string>

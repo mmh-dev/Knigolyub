@@ -7,7 +7,8 @@ import java.util.*
 
 open class User(
     @PrimaryKey @RealmField("_id") var id: String = UUID.randomUUID().toString(),
-    var name: String? = null,
+    var lastName: String? = null,
+    var firstName: String? = null,
     var password: String? = null,
     var email: String? = null,
     var school: String? = null,
