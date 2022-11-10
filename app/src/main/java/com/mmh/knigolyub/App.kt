@@ -1,27 +1,66 @@
 package com.mmh.knigolyub
 
 import android.app.Application
-import android.util.Log
-import com.mmh.knigolyub.utils.MONGODB_APP_ID
-import io.realm.Realm
-import io.realm.mongodb.App
-import io.realm.mongodb.AppConfiguration
+import com.example.bookloverfinalapp.app.utils.cons.APPLICATION_ID
+import com.example.bookloverfinalapp.app.utils.cons.CLIENT_KEY
+import com.example.bookloverfinalapp.app.utils.dispatchers.Dispatchers
+import com.example.bookloverfinalapp.app.utils.navigation.NavigationManager
+import com.example.bookloverfinalapp.app.utils.pref.SharedPreferences
+import com.example.domain.interactor.ClearBooksCacheUseCase
+import com.example.domain.interactor.ClearBooksThatReadCacheUseCase
+import com.example.domain.interactor.ClearClassCacheUseCase
+import com.example.domain.interactor.ClearStudentsCacheUseCase
+import com.parse.Parse
+import com.yariksoffice.lingver.Lingver
+import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
+import javax.inject.Inject
 
-lateinit var app: App
 
-inline fun <reified T> T.TAG(): String = T::class.java.simpleName
-
+@HiltAndroidApp
 class App : Application() {
+
+    @Inject
+    lateinit var clearStudentsCacheUseCase: ClearStudentsCacheUseCase
+
+    @Inject
+    lateinit var clearClassCacheUseCase: ClearClassCacheUseCase
+
+    @Inject
+    lateinit var clearBooksThatReadCacheUseCase: ClearBooksThatReadCacheUseCase
+
+    @Inject
+    lateinit var clearBooksCacheUseCase: ClearBooksCacheUseCase
+
+    @Inject
+    lateinit var dispatchers: Dispatchers
+
+
     override fun onCreate() {
         super.onCreate()
 
-        Realm.init(this)
-        app = App(
-            AppConfiguration.Builder(MONGODB_APP_ID)
-                .defaultSyncErrorHandler { session, error ->
-                    Log.e(TAG(), "Sync error: ${error.errorMessage}")
-                }
-                .build()
-        )
+        applicationScope = CoroutineScope(context = SupervisorJob() + kotlinx.coroutines.Dispatchers.Main)
+
+        Lingver.init(this)
+
+        Parse.enableLocalDatastore(this)
+
+        Parse.initialize(Parse.Configuration.Builder(this).applicationId(APPLICATION_ID).clientKey(CLIENT_KEY).server("https://parseapi.back4app.com")
+            .build())
+        SharedPreferences().saveIsFilter(false, this)
+
+        if (NavigationManager().isOnline(context = this)) {
+            dispatchers.launchInBackground(scope = applicationScope) {
+                clearBooksCacheUseCase.execute()
+                clearBooksThatReadCacheUseCase.execute()
+                clearClassCacheUseCase.execute()
+                clearStudentsCacheUseCase.execute()
+            }
+        }
+    }
+
+    companion object {
+        lateinit var applicationScope: CoroutineScope
     }
 }
