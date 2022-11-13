@@ -1,20 +1,21 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'realm-android'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'org.jetbrains.kotlin.plugin.parcelize'
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
-        applicationId "com.mmh.knigolyub"
-        minSdk 26
-        targetSdk 30
+        applicationId "com.example.bookloverfinalapp"
+        minSdk 24
+        targetSdk 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -22,7 +23,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -38,57 +38,99 @@ android {
     }
 }
 
-realm {
-    syncEnabled = true
-}
-
 dependencies {
+    implementation project(":data")
+    implementation project(":domain")
 
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.github.devdhar04:MaterialSpinner:v0.1.2'
-    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    //Room
+    implementation "androidx.room:room-ktx:$room_version"
 
-    implementation "com.github.VaibhavLakhera:Circular-Progress-View:0.1.2"
+    //Hilt
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
 
-    // custom splash screen
-    implementation 'com.rbddevs.splashy:splashy:1.3.0'
+    // Parse-SDK-Android
+    implementation "com.parse:parse-android:$parse_version"
 
-    //permissions
-    implementation("com.robertlevonyan.components:PermissionsFlow:1.2.2")
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
-    //Button with push down effect
-    implementation( 'com.github.thekhaeng:pushdown-anim-click:1.1.1' ){
-        exclude group: 'com.android.support'}
+    //Networking
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_version"
 
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
-    // Google SignIn
-    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    // Livedata and viewModel
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$live_data_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$view_model_version"
 
-    //bubble bottom navigation tabs
-    implementation  'io.ak1:bubbletabbar:1.0.8'
+    // Viewpager2
+    implementation("androidx.viewpager2:viewpager2:$view_pager2_version")
+
+    //Image
+    implementation "com.github.bumptech.glide:glide:$glide_version"
 
     //PDF reader library
-    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation "com.github.barteksc:android-pdf-viewer:$pdf_library_version"
 
-    //Realm with MongoDB
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "io.realm:android-adapters:4.0.0"
+    // Circle image view
+    implementation "de.hdodenhof:circleimageview:$circle_image_view_version"
 
+    //Circular-Progress
+    implementation "com.github.VaibhavLakhera:Circular-Progress-View:$circular_progress_view_version"
+
+    // Pretty Time
+    implementation "org.ocpsoft.prettytime:prettytime:$pretty_time_version"
+
+    //Shimmer Effect
+    implementation "com.facebook.shimmer:shimmer:$shimmer_effect_version"
+
+    // Loading-Animation
+    implementation "com.github.Marvel999:Android-Loading-Animation:$loading_animation_version"
+
+    //Flow layout
+    implementation "org.apmem.tools:layouts:$flow_layout_version"
+
+    //Lottie
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    // Language Setting
+    implementation "com.github.YarikSOffice:lingver:$lingver_version"
+
+    //Preferences
+    implementation "androidx.datastore:datastore-preferences:$datastore_preferences_version"
+
+    // Preference
+    implementation "androidx.preference:preference:$preference_version"
+
+    //View with push down effect
+    implementation("com.github.thekhaeng:pushdown-anim-click:$pushdown_anim_click_version") {
+        exclude group: 'com.android.support'
+    }
+
+    // Material Edit Text
+    implementation "com.rengwuxian.materialedittext:library:$material_edit_text_version"
+
+    // Mask Edit Text
+    implementation "com.github.santalu:mask-edittext:$mask_edit_text_version"
+
+    // Base
+    implementation "androidx.core:core-ktx:$core_ktx_verion"
+    implementation "androidx.appcompat:appcompat:$app_compat_verion"
+    implementation "androidx.activity:activity-ktx:$activity_ktx_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
+
+    //Test
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
 }

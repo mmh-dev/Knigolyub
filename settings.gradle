@@ -9,3 +9,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Knigolyub"
 include ':app'
+include ':data'
+include ':domain'

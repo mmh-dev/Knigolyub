@@ -1,110 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.ReaderFragment">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+	tools:context=".app.ui.general_screens.screen_reader.FragmentReader">
 
-    <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/pdfView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
+	<com.github.barteksc.pdfviewer.PDFView
+		android:id="@+id/pdfview"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layout_constraintBottom_toTopOf="@+id/cardView3"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/content"
-            android:layout_width="35dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_content" />
+	<androidx.cardview.widget.CardView
+		android:id="@+id/cardView3"
+		android:layout_width="match_parent"
+		app:cardCornerRadius="24sp"
+		app:cardElevation="12sp"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageView
-            android:id="@+id/page_first"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:rotation="180"
-            app:layout_constraintBottom_toBottomOf="@+id/page_enter_field"
-            app:layout_constraintEnd_toStartOf="@+id/page_back"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/page_enter_field"
-            app:srcCompat="@drawable/ic_last_page" />
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/constraintLayout"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.5"
+			app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
-            android:id="@+id/page_back"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:rotation="180"
-            app:layout_constraintBottom_toBottomOf="@+id/page_enter_field"
-            app:layout_constraintEnd_toStartOf="@+id/page_enter_field"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/page_first"
-            app:layout_constraintTop_toTopOf="@+id/page_enter_field"
-            app:srcCompat="@drawable/ic_arrow_bold" />
+			<ImageView
+				android:id="@+id/page_first"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:rotation="180"
+				app:layout_constraintBottom_toBottomOf="@+id/page_enter_field"
+				app:layout_constraintEnd_toStartOf="@+id/page_back"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="@+id/page_enter_field"
+				app:srcCompat="@drawable/ic_last_page" />
 
-        <EditText
-            android:id="@+id/page_enter_field"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/ic_white_bg"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/page_forward"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/page_back"
-            app:layout_constraintTop_toTopOf="parent" />
+			<ImageView
+				android:id="@+id/page_back"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:rotation="180"
+				app:layout_constraintBottom_toBottomOf="@+id/page_enter_field"
+				app:layout_constraintEnd_toStartOf="@+id/page_enter_field"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toEndOf="@+id/page_first"
+				app:layout_constraintTop_toTopOf="@+id/page_enter_field"
+				app:srcCompat="@drawable/ic_arrow_bold" />
 
-        <ImageView
-            android:id="@+id/page_forward"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            app:layout_constraintBottom_toBottomOf="@+id/page_enter_field"
-            app:layout_constraintEnd_toStartOf="@+id/page_last"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/page_enter_field"
-            app:layout_constraintTop_toTopOf="@+id/page_enter_field"
-            app:srcCompat="@drawable/ic_arrow_bold" />
+			<TextView
+				android:id="@+id/page_enter_field"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"
+				android:ems="4"
+				android:textAlignment="center"
+				android:textSize="14sp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toStartOf="@+id/page_forward"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toEndOf="@+id/page_back"
+				app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/page_last"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            app:layout_constraintBottom_toBottomOf="@+id/page_enter_field"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/page_forward"
-            app:layout_constraintTop_toTopOf="@+id/page_enter_field"
-            app:srcCompat="@drawable/ic_last_page" />
+			<ImageView
+				android:id="@+id/page_forward"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				app:layout_constraintBottom_toBottomOf="@+id/page_enter_field"
+				app:layout_constraintEnd_toStartOf="@+id/page_last"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toEndOf="@+id/page_enter_field"
+				app:layout_constraintTop_toTopOf="@+id/page_enter_field"
+				app:srcCompat="@drawable/ic_arrow_bold" />
 
-        <ImageView
-            android:id="@+id/zoom_in"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_zoom_in" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+			<ImageView
+				android:id="@+id/page_last"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				app:layout_constraintBottom_toBottomOf="@+id/page_enter_field"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toEndOf="@+id/page_forward"
+				app:layout_constraintTop_toTopOf="@+id/page_enter_field"
+				app:srcCompat="@drawable/ic_last_page" />
+
+			<ImageView
+				android:id="@+id/end_read"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:layout_marginEnd="20dp"
+				android:visibility="gone"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:srcCompat="@drawable/ic_checked" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

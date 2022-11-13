@@ -1,280 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.EditProfile">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".app.ui.general_screens.screen_profile.FragmentProfile">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="24dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+		<Toolbar
+			android:id="@+id/toolbar"
+			style="@style/toolbar_style"
+			app:layout_collapseMode="pin"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:id="@+id/coordinatorLayoutEditProfile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+		<androidx.coordinatorlayout.widget.CoordinatorLayout
+			android:id="@+id/coordinatorLayout"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/editProfileMCV"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/profileCardViewHeight"
-                    android:backgroundTint="@color/violet"
-                    app:shapeAppearanceOverlay="@style/BottomCornerRadius">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/editProfile_img"
-                            android:layout_width="@dimen/editProfileFotoSize"
-                            android:layout_height="@dimen/editProfileFotoSize"
-                            android:layout_gravity=""
-                            android:fitsSystemWindows="true"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/img"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <ImageView
-                            android:id="@+id/editProfileicon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_baseline_edit_24"
-                            app:layout_constraintBottom_toBottomOf="@+id/editProfile_img"
-                            app:layout_constraintEnd_toEndOf="@+id/editProfile_img" />
+			<com.google.android.material.card.MaterialCardView
+				android:id="@+id/materialCardView"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				app:shapeAppearanceOverlay="@style/BottomCornerRadius">
 
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+				<de.hdodenhof.circleimageview.CircleImageView
+					android:id="@+id/profile_img"
+					android:layout_width="@dimen/editProfileFotoSize"
+					android:layout_height="@dimen/editProfileFotoSize"
+					android:layout_gravity="center"
+					android:fitsSystemWindows="true"
+					android:paddingBottom="24dp"
+					android:scaleType="centerCrop"
+					android:src="@drawable/foto"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
 
-                </com.google.android.material.card.MaterialCardView>
+				<TextView
+					android:id="@+id/edit_student_image"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="bottom|center"
+					android:text="@string/image_edit"
+					android:textColor="@color/white"
+					android:textStyle="bold" />
 
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+			</com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editProfileName"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/marginProfileTIL"
-                android:layout_marginTop="@dimen/marginProfileTIL"
-                android:layout_marginEnd="@dimen/marginProfileTIL"
-                android:ems="10"
-                android:hint="Имя"
-                android:inputType="textPersonName"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:endIconMode="clear_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/coordinatorLayoutEditProfile">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editProfileNameText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/textSizeProfileTIL"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.dev.materialspinner.MaterialSpinner
-                android:id="@+id/editProfileSchoolSpinner"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginForTIL"
-                app:layout_constraintEnd_toEndOf="@+id/editProfileName"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/editProfileName"
-                app:layout_constraintTop_toBottomOf="@+id/editProfileName" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editProfileClass"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:ems="10"
-                android:hint="Класс"
-                android:inputType="textPersonName"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:endIconMode="clear_text"
-                app:layout_constraintEnd_toStartOf="@+id/editProfileClassType"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="@+id/editProfileName"
-                app:layout_constraintTop_toBottomOf="@+id/editProfileSchoolSpinner">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editProfileClassText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/textSizeProfileTIL" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editProfileClassType"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/editProfileClassDegreeWidth"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="A"
-                android:inputType="textPersonName"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:endIconMode="clear_text"
-                app:layout_constraintBottom_toBottomOf="@+id/editProfileClass"
-                app:layout_constraintEnd_toEndOf="@+id/editProfileName"
-                app:layout_constraintTop_toTopOf="@+id/editProfileClass">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editProfileClassTypeText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/textSizeProfileTIL" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editProfileEmail"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginProfileTIL"
-                android:ems="10"
-                android:hint="email"
-                android:inputType="textPersonName"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:endIconMode="clear_text"
-                app:layout_constraintEnd_toEndOf="@+id/editProfileName"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="@+id/editProfileName"
-                app:layout_constraintTop_toBottomOf="@+id/editProfileClass">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editProfileEmailText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/textSizeProfileTIL" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editProfileOldPassword"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginProfileTIL"
-                android:ems="10"
-                android:hint="Старый пароль"
-                android:inputType="textPersonName"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:endIconMode="clear_text"
-                app:layout_constraintEnd_toEndOf="@+id/editProfileName"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="@+id/editProfileName"
-                app:layout_constraintTop_toBottomOf="@+id/editProfileEmail">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editProfileOldPasswordText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/textSizeProfileTIL" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editProfileNewPassword"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginProfileTIL"
-                android:ems="10"
-                android:hint="Новый пароль"
-                android:inputType="textPersonName"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:endIconMode="clear_text"
-                app:layout_constraintEnd_toEndOf="@+id/editProfileName"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="@+id/editProfileName"
-                app:layout_constraintTop_toBottomOf="@+id/editProfileOldPassword">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editProfileNewPasswordText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/textSizeProfileTIL" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/editProfileYourSexText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ваш пол"
-                app:layout_constraintBottom_toBottomOf="@+id/editProfileRadioGroup"
-                app:layout_constraintEnd_toStartOf="@+id/editProfileRadioGroup"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editProfileRadioGroup" />
+		</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-            <RadioGroup
-                android:id="@+id/editProfileRadioGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkedButton="@id/editProfileRadioMale"
-                android:layout_marginTop="@dimen/marginProfileTIL"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/editProfileYourSexText"
-                app:layout_constraintTop_toBottomOf="@+id/editProfileNewPassword">
+		<androidx.constraintlayout.widget.Guideline
+			android:id="@+id/verticalGuideline"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			app:layout_constraintGuide_percent="0.3" />
 
-                <RadioButton
-                    android:id="@+id/editProfileRadioMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/marginProfileTIL"
-                    android:text="Мужской" />
+		<TextView
+			android:id="@+id/profile_name_text1"
+			style="@style/type_title_edit_profile"
+			android:text="@string/student_edit_profile_name_title"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
 
-                <RadioButton
-                    android:id="@+id/editProfileRadioFeMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Женский" />
+		<View
+			android:id="@+id/view"
+			android:layout_width="0dp"
+			android:layout_height="@dimen/profileLineHeight"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="16dp"
+			android:layout_marginEnd="16dp"
+			android:background="@color/grey"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="1.0"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/edit_student_last_name" />
 
-            </RadioGroup>
+		<View
+			android:id="@+id/nameLine"
+			android:layout_width="0dp"
+			android:layout_height="@dimen/profileLineHeight"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="16dp"
+			android:layout_marginEnd="16dp"
+			android:background="@color/grey"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/edit_student_name" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/editProfileSaveBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/marginProfileTIL"
-                android:background="@drawable/violet_btn_bg"
-                android:text="Сохранить"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textSizeProfileTIL"
-                app:layout_constraintEnd_toEndOf="@+id/editProfileName"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/editProfileName"
-                app:layout_constraintTop_toBottomOf="@+id/editProfileRadioGroup" />
+		<TextView
+			android:id="@+id/profile_school_text1"
+			style="@style/type_title_edit_profile"
+			android:text="@string/student_edit_profile_email_title"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/editStudentNumber" />
+
+		<TextView
+			android:id="@+id/textView11"
+			style="@style/type_title_edit_profile"
+			android:layout_marginTop="16dp"
+			android:text="@string/student_edit_profile_last_name_title"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/nameLine" />
+
+		<TextView
+			android:id="@+id/textView5"
+			style="@style/type_title_edit_profile"
+			android:text="@string/your_gender"
+			app:layout_constraintStart_toStartOf="@+id/edit_student_email"
+			app:layout_constraintTop_toBottomOf="@+id/schoolLine" />
+
+		<TextView
+			android:id="@+id/textView15"
+			style="@style/type_title_edit_profile"
+			android:text="@string/student_edit_profile_number_title"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/view" />
+
+		<RadioGroup
+			android:id="@+id/radioGroup"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginEnd="16dp"
+			android:orientation="horizontal"
+			app:layout_constraintBottom_toBottomOf="@+id/textView5"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/textView5"
+			app:layout_constraintTop_toTopOf="@+id/textView5">
+
+			<RadioButton
+				android:id="@+id/male"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginEnd="30dp"
+				android:checked="true"
+				android:text="@string/male"
+				android:textSize="12sp" />
+
+			<RadioButton
+				android:id="@+id/female"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="@string/female"
+				android:textSize="12sp" />
+		</RadioGroup>
+
+		<View
+			android:id="@+id/schoolLine"
+			android:layout_width="0dp"
+			android:layout_height="@dimen/profileLineHeight"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="16dp"
+			android:layout_marginEnd="16dp"
+			android:background="@color/grey"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0.0"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/edit_student_email" />
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/save_edit_button"
+			style="@style/button_style"
+			android:layout_marginStart="32dp"
+			android:layout_marginTop="32dp"
+			android:layout_marginEnd="32dp"
+			android:text="@string/student_edit_profile_save_btn"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="1.0"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+		<EditText
+			android:id="@+id/edit_student_name"
+			style="@style/edit_text_edit_profile"
+			app:layout_constraintStart_toStartOf="@+id/profile_name_text1"
+			app:layout_constraintTop_toBottomOf="@+id/profile_name_text1" />
+
+		<EditText
+			android:id="@+id/edit_student_last_name"
+			style="@style/edit_text_edit_profile"
+			app:layout_constraintStart_toStartOf="@+id/textView11"
+			app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+		<EditText
+			android:id="@+id/edit_student_email"
+			style="@style/edit_text_edit_profile"
+			android:enabled="true"
+			app:layout_constraintStart_toStartOf="@+id/profile_school_text1"
+			app:layout_constraintTop_toBottomOf="@+id/profile_school_text1"
+			tools:ignore="TextFields" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+		<com.santalu.maskedittext.MaskEditText
+			android:id="@+id/editStudentNumber"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:backgroundTint="@android:color/transparent"
+			android:ems="14"
+			android:enabled="true"
+			android:inputType="number"
+			app:layout_constraintStart_toStartOf="@+id/textView15"
+			app:layout_constraintTop_toBottomOf="@+id/textView15"
+			app:met_mask="+996 (###) ## ## ##" />
 
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
